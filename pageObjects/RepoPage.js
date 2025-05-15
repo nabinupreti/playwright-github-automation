@@ -62,4 +62,31 @@ exports.RepoPage = class RepoPage {
       `https://github.com/${username}?tab=repositories`
     );
   }
-};
+
+  async renameRepo(oldRepo, newRepo) {
+    const username = "upretinabin"; // Or get from login fixture
+    await this.page.goto(`https://github.com/${username}/${oldRepo}/settings`);
+    await this.page.waitForTimeout(2000);
+
+    const repoNameInput = this.page.locator("#rename-field");
+    await repoNameInput.fill(newRepo);
+
+    await this.page.getByRole("button", { name: "Rename" }).click();
+    await this.page.waitForTimeout(2000); // Wait for the page to load
+
+    // Assertion: Confirm URL updated
+    await this.page.waitForURL(`https://github.com/${username}/${newRepo}`);
+  }
+
+  async starRepo(repoName) {
+    const username = "upretinabin"; 
+    const fullRepo = `${username}/${repoName}`;
+    await this.page.goto(`https://github.com/${fullRepo}`);
+    await this.page.waitForTimeout(2000); // Wait for the page to load
+    await this.page
+      .getByRole("button", { name: "Star" })
+      .click();
+    await this.page.waitForTimeout(2000); // Wait for the page to load
+    // await page.locator('xpath = //*[@id="repository-details-container"]/ul/li[3]/div/div[2]/form/button/span[1]').click();
+  }
+}

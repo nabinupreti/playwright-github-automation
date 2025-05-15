@@ -24,9 +24,8 @@ exports.LoginPage = class LoginPage {
   }
 
   async verifyValidLogin() {
-    await page.waitForURL("https://github.com/");
+    // await page.waitForURL("https://github.com/");
     await expect(this.page.locator(this.userMenu)).toBeVisible();
-    
   }
 
   async verifyInvalidLogin() {

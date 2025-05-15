@@ -1,6 +1,10 @@
 {
   "repoData": {
-    "repoName": "jjj-playwright",
-    "repoDescription": "This repo was created using Playwright automation test."
+    "repoName": "test-repo-renamed",
+    "repoDescription": "This repo was created for testing purposes"
+  },
+  "renameRepo": {
+    "oldRepo": "test-repo",
+    "newRepo": "test-repo-renamed"
   }
 }
