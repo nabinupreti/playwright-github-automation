@@ -59,9 +59,12 @@ npx playwright show-report
 - GitHub UI
 - JSON fixtures
 
-<!-- ## 📸 Screenshots & Video
+## 📸 Screenshots & Video
 
-> You can enable video/screenshot recording in `playwright.config.js` for demo or debugging. -->
+[Click to view video](https://github.com/user-attachments/assets/eaa56ded-617b-4145-b731-714b5714445c)
+
+
+
 
 ## 📄 License
 
